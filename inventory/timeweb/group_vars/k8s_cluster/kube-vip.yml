@@ -1,0 +1,9 @@
+---
+# Enable kube-vip for control-plane VIP
+kube_vip_enabled: true
+kube_vip_controlplane_enabled: true
+kube_vip_arp_enabled: true
+kube_vip_address: 192.168.0.10
+kube_vip_iface: eth0 # full-size: set to the production NIC name (e.g. ens192)
+
+# For L2 VLAN in VMware with strict ARP filtering, ensure ARP is allowed end-to-end.

@@ -1,0 +1,21 @@
+---
+# Default SSH settings (change if needed)
+ansible_user: almalinux
+# ansible_ssh_private_key_file: /root/.ssh/id_rsa
+
+# Prevent Kubespray from renaming hosts
+override_system_hostname: false
+
+# Bastion/jump host example (uncomment and adjust for your environment)
+# ansible_ssh_common_args: >-
+#   -o ProxyJump=bastion-user@bastion.example.com
+
+# Air-gapped deployment placeholders (uncomment and fill)
+# registry_host: "registry.internal.local:5000"  # internal registry
+# kube_image_repo: "{{ registry_host }}/kubernetes"  # full-size: "registry.example.com/kubernetes"
+# gcr_image_repo: "{{ registry_host }}/gcr"  # full-size: "registry.example.com/gcr"
+# docker_image_repo: "{{ registry_host }}/docker"  # full-size: "registry.example.com/docker"
+# quay_image_repo: "{{ registry_host }}/quay"  # full-size: "registry.example.com/quay"
+# http_proxy: "http://proxy.internal.local:3128"
+# https_proxy: "http://proxy.internal.local:3128"
+# no_proxy: "127.0.0.1,localhost,192.168.0.0/24,.cluster.local"

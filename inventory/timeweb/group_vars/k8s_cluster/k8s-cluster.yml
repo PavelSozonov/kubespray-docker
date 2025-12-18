@@ -1,0 +1,39 @@
+---
+# Kubernetes and components versions (Kubespray v2.29.1 compatibility)
+# kube_version must include the "v" prefix
+kube_version: v1.32.0
+
+# CNI
+kube_network_plugin: calico
+
+# kube-proxy
+kube_proxy_mode: iptables
+
+# Disable kubeadm preflight check for CPU count (lab has 1 CPU)
+kubeadm_ignore_preflight_errors:
+  - NumCPU
+
+# Small lab sizing (1 CPU / 2 GB RAM)
+# full-size: use higher reservations to match production capacity
+kube_reserved:
+  cpu: "100m" # full-size: "500m"
+  memory: "256Mi" # full-size: "1Gi"
+  ephemeral-storage: "1Gi" # full-size: "10Gi"
+system_reserved:
+  cpu: "100m" # full-size: "500m"
+  memory: "256Mi" # full-size: "1Gi"
+  ephemeral-storage: "1Gi" # full-size: "10Gi"
+
+# Pod density for low-resource nodes
+kubelet_max_pods: 50 # full-size: 110
+
+# Calico version (must include "v" prefix)
+calico_version: v3.30.5
+
+# Networking
+kube_pods_subnet: 10.244.0.0/16
+kube_service_addresses: 10.96.0.0/12
+
+# Example settings for L2 VLAN environments (VMware etc.)
+# calico_ipip_mode: Never
+# calico_vxlan_mode: Always

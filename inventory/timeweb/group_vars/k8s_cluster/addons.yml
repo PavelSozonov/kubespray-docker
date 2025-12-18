@@ -1,0 +1,7 @@
+---
+# Disable addons not requested
+dashboard_enabled: false
+metallb_enabled: false
+
+# Keep metrics-server for basic cluster metrics (optional)
+metrics_server_enabled: true
