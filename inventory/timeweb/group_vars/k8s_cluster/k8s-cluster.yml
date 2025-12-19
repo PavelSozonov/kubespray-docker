@@ -1,7 +1,6 @@
 ---
 # Kubernetes and components versions (Kubespray v2.29.1 compatibility)
-# kube_version must include the "v" prefix
-kube_version: v1.32.0
+kube_version: 1.32.0
 
 # CNI
 kube_network_plugin: calico
@@ -27,8 +26,8 @@ system_reserved:
 # Pod density for low-resource nodes
 kubelet_max_pods: 50 # full-size: 110
 
-# Calico version (must include "v" prefix)
-calico_version: v3.30.5
+# Calico version
+calico_version: 3.30.5
 
 # Networking
 kube_pods_subnet: 10.244.0.0/16
